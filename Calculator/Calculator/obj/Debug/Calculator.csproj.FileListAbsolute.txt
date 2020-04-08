@@ -1,0 +1,10 @@
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.Calculator_ChernovMark.resources
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Отчеты,скрины и фотошоп\Calculator\Calculator\obj\Debug\Calculator.pdb
