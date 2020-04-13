@@ -280,6 +280,131 @@ namespace Calculator
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)//Кнопка, отвечающая за информацию о длине строки
+        {
+            string a = textBox2.Text.Length.ToString();
+            label6.Text = a;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)//Кнопка, отвечающая за заглавные буквы(перевод в них)
+        {
+            textBox3.Text = textBox2.Text.ToUpper();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)//Кнопка, отвечающая за строчные буквы(перевод в них)
+        {
+            textBox3.Text = textBox2.Text.ToLower();
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)// Кнопка, отвечающая за статистику
+        {
+            {
+                int vowel = 0;
+                int consonant = 0;
+                List<Char> vowels = new List<char>() { 'у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ё', 'ю' };
+                List<Char> consonants = new List<char>()
+                { 'ц', 'к', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'в', 'п'
+                , 'р', 'л', 'д', 'ж', 'ч', 'с', 'м', 'т', 'б' };
+                foreach (char chr in textBox2.Text)
+                {
+                    if (vowels.Contains(chr))
+                    {
+                        vowel++;
+                    }
+                    if (consonants.Contains(chr))
+                    {
+                        consonant++;
+                    }
+                }
+                string input = textBox2.Text;
+                int Letter = 0;
+                int Digit = 0;
+                for (int i = 0; i < input.Length; i++)
+                {
+
+                    if (char.IsLetter(input[i]))
+                        Letter++;
+                    if (char.IsDigit(input[i]))
+                        Digit++;
+                }
+                label7.Text = ("Букв : " + Letter.ToString());
+                label8.Text = ("Цифр : " + Digit.ToString());
+                label9.Text = ("Строк : " + textBox2.Lines.Length);
+                label10.Text = ("Гласных : " + vowel.ToString());
+                label11.Text = ("Согласных : " + consonant.ToString());
+
+
+            }
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)// Кнопка, отвечающая за извлечение подстроки
+        {
+            string text = textBox2.Text;
+            text = textBox2.Text.Substring(5); 
+            textBox3.Text = text;
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e) // Кнопка, отвечающая за исправление ошибок
+        {
+            string text = textBox2.Text;
+            string[] trues = new string[] { "жи", "ши", "ча", "ща", "чу", "щу" };
+            string[] errors = new string[] { "жы", "шы", "чя", "щя", "чю", "щю" };
+            for (int i = 0; i < textBox2.Text.Length; i++)
+            {
+                for (int j = 0; j < errors.Length; j++)
+                {
+                    try
+                    {
+                        if (textBox2.Text.Contains(errors[j])) 
+                            text = textBox2.Text.Replace(errors[j], trues[j]); 
+                        textBox3.Text = text;
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Строка не может быть пустой!");
+                    }
+
+                }
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e) // Кнопка, отвечающая за преобразование строки
+        {
+            string text = textBox2.Text;
+            string[] str = new string[] { "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять" };
+            string[] num = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+            for (int i = 0; i < textBox2.Text.Length; i++)
+            {
+                for (int j = 0; j < str.Length; j++)
+                    try
+                    {
+                        if (textBox2.Text.Contains(str[j]))
+                            text = textBox2.Text.Replace(str[j], num[j]);
+                        textBox3.Text = text;
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Строка не может быть пустой!");
+                    }
+                
+            }
+        }
+
         private void Shesnadd_Click(object sender, EventArgs e) //Кнопка, отвечающая за перевод в шестнадцатерич. систему счис.
         {
             try
@@ -351,6 +476,7 @@ namespace Calculator
                     break;
 
             }
+
         }
     }
 }
