@@ -1,13 +1,11 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
+using System.IO;
+using System.Diagnostics;
 namespace Calculator
 {
     public partial class Calculator_ChernovMark : Form
@@ -404,6 +402,85 @@ namespace Calculator
                 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double i = double.Parse(textBox4.Text); //перевод из футов в метры
+            double conver = i * 0.3;
+            label14.Text = "Конвертированная сумма: " + conver;
+        }
+
+        private void button4_Click(object sender, EventArgs e) // перевод пядей в метры
+        {
+            double a = double.Parse(textBox4.Text); 
+            double conver = a * 0.18;
+            label14.Text = "Конвертированная сумма: " + conver;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double c = double.Parse(textBox4.Text); //перевод из ярдов в метры
+            double conver = c * 0.91;
+            label14.Text = "Конвертированная сумма: " + conver;
+        }
+
+        private void button6_Click(object sender, EventArgs e) // перевод миль в метры
+        {
+            double n = double.Parse(textBox4.Text); 
+            double conver = n* 1609;
+            label14.Text = "Конвертированная сумма: " + conver;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) // перевод дюйм в метры
+        {
+            double m = double.Parse(textBox4.Text); 
+            double conver = m * 0.025;
+            label14.Text = "Конвертированная сумма: " + conver;
+        }
+
+        private void button5_Click(object sender, EventArgs e) //Запись в файл
+        {
+            FileStream file = new FileStream("C:\\1.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(file);
+            writer.Write("Число " + label14);
+            writer.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e) // Считывание исходных данных
+        {
+            
+                FileStream file = new FileStream("C:\\2.txt", FileMode.OpenOrCreate, FileAccess.Read);
+                StreamReader reader = new StreamReader(file);
+                textBox4.Text = reader.ReadToEnd();
+                reader.Close();
+            }
 
         private void Shesnadd_Click(object sender, EventArgs e) //Кнопка, отвечающая за перевод в шестнадцатерич. систему счис.
         {
